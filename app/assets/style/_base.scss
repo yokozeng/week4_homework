@@ -1,0 +1,21 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family:'Roboto', 'Noto Sans', sans-serif;
+    font-size: $font-size-base;
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}
