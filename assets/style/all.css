@@ -1,23 +1,326 @@
+@charset "UTF-8";
+/*變數設定*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', 'Noto Sans', sans-serif;
+  line-height: 1.5; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle; }
+
+a {
+  text-decoration: none;
+  display: block; }
+
+/*內外距推擠*/
+.pt-4 {
+  padding-top: 32px; }
+
+.pt-5 {
+  padding-top: 40px; }
+
+.pb-5 {
+  padding-bottom: 40px; }
+
+.mb-2 {
+  margin-bottom: 16px; }
+
+.mb-3 {
+  margin-bottom: 24px; }
+
+.mb-4 {
+  margin-bottom: 32px; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+/* header */
 .header {
-  height: 200px;
-  background-color: #00cc99; }
-
-.footer {
-  height: 200px;
-  background-color: #00cc99; }
-
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  background: #AA0601;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s; }
-  .box:hover {
-    width: 200px;
-    background-color: #00cc99; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 88px; }
+  .header .logo {
+    padding: 30px 0; }
+    .header .logo a {
+      width: 80px;
+      height: 49px;
+      background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/logo.png?raw=true);
+      text-indent: 101%;
+      background-repeat: no-repeat;
+      white-space: nowrap;
+      overflow: hidden; }
+  .header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .header .menu li {
+      padding: 0 32px; }
+      .header .menu li a {
+        font-size: 20px;
+        color: #fff;
+        line-height: 50px; }
+        .header .menu li a:hover {
+          border-bottom: 3px solid #fff; }
+  @media (max-width: 992px) {
+    .header {
+      padding: 0 40px; }
+      .header .menu li {
+        padding: 0 20px; } }
+  @media (max-width: 768px) {
+    .header {
+      padding: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .header .logo {
+        padding: 10px 0; }
+        .header .logo a {
+          width: 48px;
+          height: 30px;
+          background-size: cover;
+          /*讓圖片自適應縮放*/ }
+      .header .menu {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        .header .menu li {
+          width: 50%;
+          border: 1px solid #fff;
+          text-align: center; }
+          .header .menu li a:hover {
+            border-bottom: 0px solid #fff; } }
+
+.footer {
+  background: #AA0601; }
+  .footer .container {
+    margin: 0 40px; }
+  .footer .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .footer .menu .menu-nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .footer .menu .menu-nav li {
+        margin-right: 48px; }
+        .footer .menu .menu-nav li a {
+          color: #fff; }
+          .footer .menu .menu-nav li a:hover {
+            color: #650300;
+            background: #fff; }
+    .footer .menu .menu-social {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .footer .menu .menu-social li {
+        margin-left: 32px; }
+        .footer .menu .menu-social li a:hover {
+          -webkit-filter: brightness(80%);
+                  filter: brightness(80%); }
+  .footer .contact li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .footer .contact li img {
+      max-width: 40px;
+      margin-right: 20px; }
+    .footer .contact li p {
+      color: #fff;
+      font-size: 36px; }
+  .footer .other {
+    border-top: 1px solid #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .footer .other .copyright {
+      color: #fff; }
+    .footer .other .terms {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .footer .other .terms a {
+        margin-left: 48px;
+        color: #fff; }
+        .footer .other .terms a:hover {
+          color: #650300;
+          background: #fff; }
+  @media (max-width: 992px) {
+    .footer .menu .menu-nav li {
+      margin-right: 40px; }
+    .footer .menu .menu-social li {
+      margin-left: 24px; }
+      .footer .menu .menu-social li img {
+        max-width: 24px; }
+    .footer .contact li img {
+      max-width: 24px; }
+    .footer .contact li p {
+      font-size: 20px; }
+    .footer .other .terms a {
+      margin-left: 24px; } }
+  @media (max-width: 768px) {
+    .footer .container {
+      margin: 0 16px; }
+    .footer .menu {
+      margin-bottom: 0;
+      position: relative; }
+      .footer .menu .menu-nav {
+        display: none; }
+      .footer .menu .menu-social {
+        position: absolute;
+        right: 0;
+        top: 0;
+        /*筆記：可用絕對定位做*/ }
+    .footer .other {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .footer .other .copyright {
+        margin-bottom: 8px; }
+      .footer .other .terms {
+        display: block; }
+        .footer .other .terms a {
+          margin-left: 0;
+          margin-bottom: 8px; } }
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 40px; } }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px; } }
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  border-left: 8px solid #AA0601;
+  padding-left: 16px;
+  margin: 96px 0 60px 0; }
+  @media (max-width: 992px) {
+    .title {
+      border-left: 4px solid #AA0601;
+      margin: 60px 0 40px 0; } }
+  @media (max-width: 768px) {
+    .title {
+      font-size: 28px;
+      padding-left: 8px;
+      margin: 28px 0 24px 0; } }
+
+.sub-title {
+  font-size: 32px;
+  margin-bottom: 36px; }
+  @media (max-width: 992px) {
+    .sub-title {
+      margin-bottom: 32px; } }
+  @media (max-width: 768px) {
+    .sub-title {
+      font-size: 20px;
+      margin-bottom: 24px; } }
+
+.content {
+  margin-bottom: 160px; }
+  .content li {
+    margin-bottom: 32px; }
+    .content li .question {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px; }
+    .content li .answer {
+      margin-left: 95px; }
+  @media (max-width: 992px) {
+    .content {
+      margin-bottom: 96px; }
+      .content li {
+        margin-bottom: 24px; }
+        .content li .answer {
+          margin-left: 59px; } }
+  @media (max-width: 768px) {
+    .content {
+      margin-bottom: 56px; }
+      .content li {
+        margin-bottom: 20px; }
+        .content li .question {
+          font-size: 16px;
+          margin-bottom: 8px; }
+        .content li .answer {
+          font-size: 14px;
+          margin-left: 0; } }
 
 /*# sourceMappingURL=all.css.map */
