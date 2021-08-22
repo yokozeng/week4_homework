@@ -1,0 +1,198 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+//   @include pad(){
+//     max-width: 688px;
+//     margin: 0 auto;
+//   }
+}
+
+/* header */
+.header{
+    background: $primary;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 88px;
+    .logo{
+        padding: 30px 0;
+        a{
+            width: 80px;
+            height: 49px;
+            background-image:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/logo.png?raw=true);
+            text-indent: 101%;
+            background-repeat: no-repeat;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+    .menu{
+        display: flex;
+        align-items: center;
+        li{
+            padding: 0 32px;
+            a{
+                font-size: 20px;
+                color: $white;
+                line-height: 50px;
+                &:hover{
+                    border-bottom: 3px solid $white;
+                }
+            }
+        }
+    }
+    @include pad(){
+        padding: 0 40px;
+        .menu li{
+            padding: 0 20px;
+        }
+    }
+    @include mobile(){
+        padding: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        .logo{
+            padding: 10px 0;
+            a{
+            width: 48px;
+            height: 30px;
+            background-size: cover; /*讓圖片自適應縮放*/
+            }
+        }
+        .menu{
+            flex-wrap: wrap;
+            li{
+                width: 50%;
+                border: 1px solid $white;
+                text-align: center;
+                a:hover{
+                    border-bottom: 0px solid $white;
+                }
+            }
+        }
+    }
+}
+// /*footer*/
+.footer{
+    background: $primary;
+    .container{
+        margin: 0 40px;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu-nav{
+            display: flex;
+            li{
+                margin-right: 48px;
+                a{
+                    color: $white;
+                    &:hover{
+                        color: $secondary;
+                        background: $white;
+                    }
+                }
+            }
+        }
+        .menu-social{
+            display: flex;
+            li{
+                margin-left: 32px;
+                a:hover{
+                    filter: brightness(80%);
+                }
+            }
+        }
+    }
+    .contact{
+        li{
+            display: flex;
+            img{
+                max-width: 40px;
+                margin-right: 20px;
+            }
+            p{
+                color: $white;
+                font-size: 36px;
+            }
+        }
+    }
+    .other{
+        border-top: 1px solid $white;
+        display: flex;
+        justify-content: space-between;
+        .copyright{
+            color: $white;
+        }
+        .terms{
+            display: flex;
+            a{
+                margin-left: 48px;
+                color: $white;
+                &:hover{
+                    color: $secondary;
+                    background: $white;
+                }
+            }
+        }
+    }
+    @include pad(){
+        .menu{
+            .menu-nav li{
+                margin-right: 40px;
+            }
+            .menu-social li{
+                margin-left: 24px;
+                img{
+                    max-width: 24px;
+                }
+            }
+        }
+        .contact li{
+            img{
+                max-width: 24px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+        .other{
+            .terms a{
+                margin-left: 24px;
+            }
+        }
+    }
+    @include mobile(){
+        .container{
+            margin: 0 16px;
+        }
+        .menu{
+            margin-bottom: 0;
+            position: relative;
+            .menu-nav{
+                display: none;
+            }
+            .menu-social{
+                position: absolute;
+                right:0;
+                top:0;
+                /*筆記：可用絕對定位做*/
+            }
+
+        } 
+        .other{
+            flex-direction: column;
+            .copyright{
+                margin-bottom: 8px;
+            }
+            .terms{
+                display: block;
+                a{
+                    margin-left: 0;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}
